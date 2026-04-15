@@ -1,0 +1,27 @@
+project:
+  name: "Experiment Analysis & Multiple Comparison Correction"
+  version: "1.0.0"
+
+analysis:
+  alpha: 0.05
+  correction_method: "fdr_bh"
+  metric_types:
+    proportion_metrics:
+      - "retention_7d"
+      - "retention_30d"
+      - "activation"
+    continuous_metrics:
+      - "sessions"
+      - "error_rate"
+      - "latency_ms"
+  guardrail_metrics:
+    - "error_rate"
+    - "latency_ms"
+
+visualization:
+  figure_format: "png"
+  figure_dpi: 150
+
+output:
+  figures_dir: "output/figures/"
+  reports_dir: "output/reports/"
